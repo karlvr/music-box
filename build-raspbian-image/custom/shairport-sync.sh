@@ -13,7 +13,7 @@ tar zxf master.tar.gz
 pushd shairport-sync-master
 
 autoreconf -i -f
-# Fix rpl_malloc issue
+# Fix rpl_malloc issue if we're cross-compiling (TODO check if we are)
 # http://rickfoosusa.blogspot.co.nz/2011/11/howto-fix-undefined-reference-to.html
 sed -e 's/^AC_FUNC_MALLOC/#AC_FUNC_MALLOC/' --in-place configure.ac
 sed -e 's/^AC_FUNC_REALLOC/#AC_FUNC_REALLOC/' --in-place configure.ac
