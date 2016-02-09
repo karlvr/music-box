@@ -1,14 +1,14 @@
 #!/bin/bash -eu
 
 apt-get install -y build-essential autoconf automake libtool libdaemon-dev libasound2-dev libpopt-dev libconfig-dev avahi-daemon libavahi-client-dev libssl-dev libsoxr-dev
-apt-get install -y wget
+apt-get install -y curl
 
 WORKDIR=/root/shairport-sync
 
 mkdir -p "$WORKDIR"
 pushd "$WORKDIR"
 
-wget https://github.com/mikebrady/shairport-sync/archive/master.tar.gz
+curl -o master.tar.gz -L https://github.com/mikebrady/shairport-sync/archive/master.tar.gz
 tar zxf master.tar.gz
 pushd shairport-sync-master
 
